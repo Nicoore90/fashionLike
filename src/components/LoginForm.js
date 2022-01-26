@@ -15,10 +15,6 @@ function LoginForm({login, error}) {
                 <p>¿Aún no tienes cuenta? <a href="#" className="login__link">Crear cuenta</a></p>
                 {(error != "") ? (<div className="error">{error}</div>) : ""}
                 <div className="form-group">
-                    <label htmlFor="name">Nombre: </label>
-                    <input type='text' name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
-                </div>
-                <div className="form-group">
                     <label htmlFor="email">Correo electrónico</label>
                     <input type='email' name='email' id='email' onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
                 </div>
@@ -27,7 +23,7 @@ function LoginForm({login, error}) {
                     <a href="#" className="login__link">Olvidé mi contraseña</a>
                     <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
                 </div>
-                <button type="submit">Log In</button>
+                <button type="submit" className="login-button">Iniciar Sesion</button>
             </div>
         </form>
     )

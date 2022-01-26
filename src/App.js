@@ -8,7 +8,7 @@ function App() {
     password: 'fashionLike'
   }
 
-  const [user, setUser] = useState({name: '', email: ''});
+  const [user, setUser] = useState({email: ''});
   const [error, setError] = useState("");
 
   const login = details => {
@@ -17,7 +17,6 @@ function App() {
     if (details.email == adminUser.email && details.password == adminUser.password) {
       console.log("Conectado");
       setUser({
-        name: details.name,
         email: details.email
       })
     } else {
@@ -29,7 +28,6 @@ function App() {
   const logOut = () => {
     console.log('Desconectado')
     setUser({
-      name: "",
       email: ""
     })
   }
@@ -38,7 +36,7 @@ function App() {
     <div className="App">
       {(user.email != '') ? (
         <div className='welcome'>
-          <h2>Bienvenido, <span>{user.name}</span></h2>
+          <h2>Bienvenido, <span>{user.email}</span></h2>
           <button onClick={logOut}>Cerrar Sesion</button>
         </div>
       ) : (
