@@ -10,6 +10,9 @@ function LoginForm({login, error}) {
     }
     return (
         <form onSubmit={submitHandler}>
+            <div className="picture">
+                <img src={require("../assets/descarga.png")} />
+            </div>
             <div className="form-inner">
                 <h2>Inicio de sesion</h2>
                 <p>¿Aún no tienes cuenta? <a href="#" className="login__link">Crear cuenta</a></p>
@@ -24,7 +27,15 @@ function LoginForm({login, error}) {
                     <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
                 </div>
                 <button type="submit" className="login-button">Iniciar Sesion</button>
+                <div className="divider">
+                    <p>o sino</p>
+                    <div className="social-networks">
+                        <button>Ingresar con google</button>
+                        <button>Ingresar con facebook</button>
+                    </div>
+                </div>
             </div>
+            
         </form>
     )
 }

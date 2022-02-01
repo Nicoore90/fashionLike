@@ -1,7 +1,20 @@
+
+
 * {
   margin: 0;
   padding: 0;
+  --text_font:'Roboto', sans-serif;
 }
+
+#root {
+  height: 100%;
+}
+
+
+.picture {
+  display: none;
+}
+
 
 form {
   width: 100%;
@@ -42,7 +55,53 @@ form {
   width: 100%;
 }
 
+.form-group label {
+  font-family: var(--text_font);
+}
+
 .login-button {
   width: 100%;
   padding: 10px;
+}
+
+.social-networks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .picture {
+    display: block;
+    height: 100%;
+  }
+
+  .picture img {
+    height: 800px;
+    width: 600px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .form-inner {
+    margin-right: 150px;
+    width: 400px;
+  }
+
+  .form-group {
+    width: 400px;
+  }
+
+  #email {
+    height: 30px;
+  }
+
+  #password {
+    height: 30px;
+  }
 }
